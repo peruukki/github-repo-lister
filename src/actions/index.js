@@ -10,6 +10,16 @@ const normalizeRepositories = (repositories) =>
     link: repository.html_url
   }));
 
+const normalizeErrorMessage = (username, error) => {
+  if (error.response && error.response.status === 403) {
+    return 'GitHub API rate limit exceeded, try again later.';
+  }
+  if (error.response && error.response.status === 404) {
+    return `User "${username}" not found.`;
+  }
+  return error.toString();
+};
+
 export const fetchRepositoriesRequest = (username) => ({
   type: 'FETCH_REPOSITORIES_REQUEST',
   username
@@ -21,17 +31,11 @@ export const fetchRepositoriesSuccess = (username, repositories) => ({
   repositories: normalizeRepositories(repositories)
 });
 
-export const fetchRepositoriesFailure = (username, error) => {
-  const errorMsg = (error.response && error.response.status === 404)
-    ? `User "${username}" not found.`
-    : error.toString();
-
-  return {
-    type: 'FETCH_REPOSITORIES_FAILURE',
-    username,
-    error: errorMsg
-  };
-};
+export const fetchRepositoriesFailure = (username, error) => ({
+  type: 'FETCH_REPOSITORIES_FAILURE',
+  username,
+  error: normalizeErrorMessage(username, error)
+});
 
 export const fetchRepositories = (username) => {
   return (dispatch) => {

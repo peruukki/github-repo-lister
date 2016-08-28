@@ -79,7 +79,7 @@ describe('actions', () => {
       };
       const expectedActions = [
         { type: 'FETCH_REPOSITORIES_REQUEST', username },
-        { type: 'FETCH_REPOSITORIES_FAILURE', username, error: 'Error: Forbidden' }
+        { type: 'FETCH_REPOSITORIES_FAILURE', username, error: 'GitHub API rate limit exceeded, try again later.' }
       ];
 
       return assertAsyncFetchActions(apiStatus, apiBody, expectedActions);
