@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import UsernameInput from './components/UsernameInput';
-import RepositoryList from './components/RepositoryList';
-
-const mockRepositories = require('./mock-data.json');
+import UsernameInputContainer from './components/UsernameInputContainer';
+import RepositoryListContainer from './components/RepositoryListContainer';
 
 class App extends Component {
   render() {
@@ -15,8 +13,8 @@ class App extends Component {
           <h2>List GitHub Repositories</h2>
         </div>
         <div className="App-content">
-          <UsernameInput />
-          <RepositoryList repositories={mockRepositories} />
+          <UsernameInputContainer />
+          <RepositoryListContainer />
         </div>
       </div>
     );
