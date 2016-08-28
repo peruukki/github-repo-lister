@@ -1,6 +1,6 @@
 const initialState = {
   isFetching: false,
-  username: '',
+  username: null,
   repositories: [],
   error: null
 };
@@ -11,7 +11,7 @@ const repositories = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        username: action.username,
+        username: null,
         error: null
       };
     case 'FETCH_REPOSITORIES_SUCCESS':
