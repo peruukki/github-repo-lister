@@ -6,8 +6,10 @@
   margin-right: 0.5em;
 }
 
-.UsernameInput-search-box {
+.UsernameInput-search-box,
+.UsernameInput-submit-button {
   font-size: 1em;
+  margin: 0 0.1em;
 }
 
 .UsernameInput-error {

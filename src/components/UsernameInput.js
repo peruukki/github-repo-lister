@@ -21,7 +21,8 @@ class UsernameInput extends Component {
       <div className="UsernameInput">
         <form onSubmit={this.submitUsername.bind(this)}>
           <label className="UsernameInput-username-label" htmlFor="username">GitHub Username:</label>
-          <input id="username" ref="usernameInput" className="UsernameInput-search-box" type="text" placeholder="List repositories..." />
+          <input id="username" ref="usernameInput" className="UsernameInput-search-box" type="text" placeholder="Search..." />
+          <button className="UsernameInput-submit-button" type="submit">Go!</button>
         </form>
         {this.props.error ? this.renderError(this.props.error) : null}
       </div>
