@@ -12,26 +12,36 @@ const renderRepository = (repository) => (
   </tr>
 );
 
-const RepositoryList = ({repositories}) => {
+const renderRepositoryList = (repositories) => {
   const rows = repositories.length === 0 ?
     renderEmptyList() :
     repositories.map(renderRepository);
 
   return (
-    <div className="RepositoryList">
-      <table>
-        <thead>
-          <tr>
-            <th className="RepositoryList-list-heading">
-              Repositories:
-            </th>
-          </tr>
-        </thead>
+    <table>
+      <thead>
+        <tr>
+          <th className="RepositoryList-list-heading">
+            Repositories:
+          </th>
+        </tr>
+      </thead>
 
-        <tbody className="RepositoryList-list-body">
-          {rows}
-        </tbody>
-      </table>
+      <tbody className="RepositoryList-list-body">
+        {rows}
+      </tbody>
+    </table>
+  );
+};
+
+const RepositoryList = ({username, repositories}) => {
+  const repositoryList = username ?
+    renderRepositoryList(repositories) :
+    null;
+
+  return (
+    <div className="RepositoryList">
+      {repositoryList}
     </div>
   );
 };

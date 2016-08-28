@@ -5,7 +5,9 @@ import UsernameInput from './UsernameInput';
 
 const mapDispatchToProps = (dispatch) => ({
   onUsernameSubmit: (username) => {
-    dispatch(fetchRepositories(username));
+    if (username) {
+      dispatch(fetchRepositories(username));
+    }
   }
 });
 
