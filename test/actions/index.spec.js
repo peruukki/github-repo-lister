@@ -45,7 +45,7 @@ describe('actions', () => {
       expect(actions.fetchRepositoriesFailure(username, error)).toEqual({
         type: 'FETCH_REPOSITORIES_FAILURE',
         username,
-        error: 'User "user" not found'
+        error: 'User "user" not found.'
       });
     });
 
