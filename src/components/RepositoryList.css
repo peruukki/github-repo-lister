@@ -2,7 +2,12 @@
   text-align: left;
 }
 
+.RepositoryList table {
+  border-spacing: 0.5em;
+}
+
 .RepositoryList-list-heading {
+  font-size: 1.5em;
   padding-bottom: 0.5em;
 }
 
