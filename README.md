@@ -7,7 +7,7 @@ The project’s structure is based on
 [create-react-app](https://github.com/facebookincubator/create-react-app), see
 its separate [README](README-create-react-app.md) for more details.
 
-## Running Development server
+## Running Development Server
 
 ```
 npm start
@@ -29,7 +29,7 @@ npm run test:watch
 
 Runs the tests on file changes.
 
-## Creating production build
+## Creating Production Build
 
 ```
 npm run build
