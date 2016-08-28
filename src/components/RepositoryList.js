@@ -37,7 +37,7 @@ const RepositoryList = ({repositories}) => {
 };
 
 RepositoryList.propTypes = {
-  repositories: React.PropTypes.array
+  repositories: React.PropTypes.array.isRequired
 };
 
 export default RepositoryList;
