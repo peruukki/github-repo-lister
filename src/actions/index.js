@@ -1,7 +1,6 @@
 import fetch from './utils/fetch';
 
 const repositoriesUrl = (username) => `https://api.github.com/users/${username}/repos`;
-//const repositoriesUrl = (username) => 'http://localhost:8080/repos.json';
 
 const normalizeRepositories = (repositories) =>
   repositories.map((repository) => ({
