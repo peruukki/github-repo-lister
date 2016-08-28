@@ -29,6 +29,9 @@
     "test:watch": "npm test -- --watch"
   },
   "eslintConfig": {
-    "extends": "./node_modules/react-scripts/config/eslint.js"
+    "extends": "./node_modules/react-scripts/config/eslint.js",
+    "rules": {
+      "semi": 1
+    }
   }
 }
