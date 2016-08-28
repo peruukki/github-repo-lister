@@ -1,0 +1,11 @@
+.RepositoryList {
+  text-align: left;
+}
+
+.RepositoryList-list-heading {
+  padding-bottom: 0.5em;
+}
+
+.RepositoryList-list-body {
+  vertical-align: top;
+}

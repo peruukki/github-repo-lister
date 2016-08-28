@@ -1,0 +1,17 @@
+[
+  {
+    "name": "nhl-score-api",
+    "description": "A JSON API that returns the scores and goals from the latest finished NHL games.",
+    "link": "https://github.com/peruukki/nhl-score-api"
+  },
+  {
+    "name": "nhl-recap",
+    "description": "A web app for checking the latest NHL scores from nhl-score-api.",
+    "link": "https://github.com/peruukki/nhl-recap"
+  },
+  {
+    "name": "Anglicisms",
+    "description": "Ruby scripts I created for investigating the text corpus in my bachelor's thesis where I analyzed anglicisms in French articles. http://peruukki.github.com/Anglicisms",
+    "link": "https://github.com/peruukki/Anglicisms"
+  }
+]

@@ -1,0 +1,11 @@
+.UsernameInput {
+  margin: 2em 0;
+}
+
+.UsernameInput-username-label {
+  margin-right: 0.5em;
+}
+
+.UsernameInput-search-box {
+  font-size: 1em;
+}
