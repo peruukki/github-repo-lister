@@ -4,7 +4,8 @@ import RepositoryList from './RepositoryList';
 
 const mapStateToProps = (state) => ({
   username: state.username,
-  repositories: state.repositories
+  repositories: state.repositories,
+  error: state.error
 });
 
 const RepositoryListContainer = connect(

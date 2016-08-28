@@ -21,11 +21,17 @@ export const fetchRepositoriesSuccess = (username, repositories) => ({
   repositories: normalizeRepositories(repositories)
 });
 
-export const fetchRepositoriesFailure = (username, error) => ({
-  type: 'FETCH_REPOSITORIES_FAILURE',
-  username,
-  error
-});
+export const fetchRepositoriesFailure = (username, error) => {
+  const errorMsg = (error.response.status === 404)
+    ? `User "${username}" not found`
+    : error.toString();
+
+  return {
+    type: 'FETCH_REPOSITORIES_FAILURE',
+    username,
+    error: errorMsg
+  };
+};
 
 export const fetchRepositories = (username) => {
   return (dispatch) => {

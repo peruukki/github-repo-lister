@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import { fetchRepositories } from '../actions';
 import UsernameInput from './UsernameInput';
 
+const mapStateToProps = (state) => ({
+  error: state.error
+});
+
 const mapDispatchToProps = (dispatch) => ({
   onUsernameSubmit: (username) => {
     if (username) {
@@ -12,7 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const UsernameInputContainer = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(UsernameInput);
 

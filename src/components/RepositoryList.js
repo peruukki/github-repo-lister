@@ -34,8 +34,8 @@ const renderRepositoryList = (repositories) => {
   );
 };
 
-const RepositoryList = ({username, repositories}) => {
-  const repositoryList = username ?
+const RepositoryList = ({username, repositories, error}) => {
+  const repositoryList = (username && !error) ?
     renderRepositoryList(repositories) :
     null;
 

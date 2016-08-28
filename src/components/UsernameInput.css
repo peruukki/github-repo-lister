@@ -9,3 +9,8 @@
 .UsernameInput-search-box {
   font-size: 1em;
 }
+
+.UsernameInput-error {
+  margin-top: 0.5em;
+  color: red;
+}

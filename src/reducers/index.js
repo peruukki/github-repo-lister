@@ -11,14 +11,16 @@ const repositories = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        username: action.username
+        username: action.username,
+        error: null
       };
     case 'FETCH_REPOSITORIES_SUCCESS':
       return {
         ...state,
         isFetching: false,
         username: action.username,
-        repositories: action.repositories
+        repositories: action.repositories,
+        error: null
       };
     case 'FETCH_REPOSITORIES_FAILURE':
       return {
