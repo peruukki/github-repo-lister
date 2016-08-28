@@ -22,7 +22,7 @@ export const fetchRepositoriesSuccess = (username, repositories) => ({
 });
 
 export const fetchRepositoriesFailure = (username, error) => {
-  const errorMsg = (error.response.status === 404)
+  const errorMsg = (error.response && error.response.status === 404)
     ? `User "${username}" not found`
     : error.toString();
 

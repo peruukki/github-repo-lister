@@ -12,6 +12,9 @@ const checkStatus = (response) => {
 
 const failingFetch = (url) =>
   fetch(url)
+    .catch(error => {
+      throw new Error('Network error, check your internet connection');
+    })
     .then(checkStatus)
     .then(response => response.json());
 
