@@ -40,3 +40,8 @@ Creates a production build in the `build` directory.
 ## License
 
 [MIT](LICENSE)
+
+## Acknowledgements
+
+The CSS spinner shown during repository fetching is from
+[SpinKit](https://github.com/tobiasahlin/SpinKit).

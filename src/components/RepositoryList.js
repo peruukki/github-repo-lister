@@ -1,4 +1,5 @@
 import React from 'react';
+import Spinner from './Spinner';
 import './RepositoryList.css';
 
 const renderEmptyList = () => (
@@ -34,10 +35,12 @@ const renderRepositoryList = (repositories) => {
   );
 };
 
-const RepositoryList = ({username, repositories, error}) => {
-  const repositoryList = (username && !error) ?
-    renderRepositoryList(repositories) :
-    null;
+const RepositoryList = ({isFetching, username, repositories, error}) => {
+  const repositoryList = isFetching
+    ? <Spinner />
+    : (username && !error)
+      ? renderRepositoryList(repositories)
+      : null;
 
   return (
     <div className="RepositoryList">
