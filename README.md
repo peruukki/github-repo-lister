@@ -1,7 +1,8 @@
 # github-repo-lister
 
 A [React](https://facebook.github.io/react/index.html) + [Redux](http://redux.js.org/)
-exercise, a web app that lists a user’s GitHub repositories.
+exercise, a web app that lists a user’s GitHub repositories. Check it at [GitHub
+pages](https://peruukki.github.io/github-repo-lister/).
 
 The project’s structure is based on
 [create-react-app](https://github.com/facebookincubator/create-react-app), see
