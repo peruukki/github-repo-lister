@@ -4,7 +4,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 10s 10s cubic-bezier(0.73, -0.24, 0.49, 1.23);
   height: 80px;
 }
 
