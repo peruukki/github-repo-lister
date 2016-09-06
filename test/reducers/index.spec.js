@@ -12,6 +12,10 @@ describe('reducers', () => {
       error: null
     };
 
+    const repositories = [1, 2].map(i =>
+      ({ name: `repo${i}`, description: `description${i}`, link: `link${i}` })
+    );
+
     it('should provide the initial state', () => {
       expect(index(undefined, {})).toEqual(initialState);
     });
@@ -25,7 +29,6 @@ describe('reducers', () => {
     });
 
     it('should handle the FETCH_REPOSITORIES_SUCCESS action', () => {
-      const repositories = [{ name: 'repo1' }, { name: 'repo2' }];
       const username = 'user';
       const action = { type: 'FETCH_REPOSITORIES_SUCCESS', repositories, username };
 
@@ -35,7 +38,6 @@ describe('reducers', () => {
     });
 
     it('should handle the FETCH_REPOSITORIES_FAILURE action', () => {
-      const repositories = [{ name: 'repo1' }, { name: 'repo2' }];
       const username = 'user';
       const error = 'Fake error';
       const action = { type: 'FETCH_REPOSITORIES_FAILURE', repositories, username, error };
@@ -46,7 +48,7 @@ describe('reducers', () => {
     });
 
     it('should ignore unknown actions', () => {
-      expect(index(1, { type: 'unknown' })).toEqual(1);
+      expect(index(initialState, { type: 'unknown' })).toEqual(initialState);
     });
   });
 

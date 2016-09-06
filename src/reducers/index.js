@@ -1,4 +1,4 @@
-// @flow weak
+// @flow
 const initialState = {
   isFetching: false,
   username: null,
@@ -6,7 +6,7 @@ const initialState = {
   error: null
 };
 
-const repositories = (state = initialState, action) => {
+function repositories(state: State = initialState, action: Action): State {
   switch (action.type) {
     case 'FETCH_REPOSITORIES_REQUEST':
       return {
@@ -34,6 +34,6 @@ const repositories = (state = initialState, action) => {
     default:
       return state;
   }
-};
+}
 
 export default repositories;
