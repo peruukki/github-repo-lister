@@ -1,4 +1,4 @@
-// @flow weak
+// @flow
 import React, { Component } from 'react';
 import './UsernameInput.css';
 
@@ -9,14 +9,14 @@ class UsernameInput extends Component {
     onUsernameSubmit: React.PropTypes.func.isRequired
   };
 
-  submitUsername(e) {
+  submitUsername(e: DOMEvent) {
     e.preventDefault();
     if (!this.props.isFetching) {
       this.props.onUsernameSubmit(this.refs.usernameInput.value);
     }
   }
 
-  renderError(message) {
+  renderError(message: string) {
     return <div className="UsernameInput-error">{message}</div>;
   }
 
