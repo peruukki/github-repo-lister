@@ -30,6 +30,14 @@ npm run test:watch
 
 Runs the tests on file changes.
 
+## Running Type Checks
+
+```
+npm run flow
+```
+
+Runs the [Flow](https://flowtype.org/) type checks.
+
 ## Creating Production Build
 
 ```

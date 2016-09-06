@@ -1,3 +1,4 @@
+// @flow weak
 import React from 'react';
 import Spinner from './Spinner';
 import './RepositoryList.css';

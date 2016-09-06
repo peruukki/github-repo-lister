@@ -1,3 +1,4 @@
+// @flow weak
 import fetch from './utils/fetch';
 
 const repositoriesUrl = (username) => `https://api.github.com/users/${username}/repos`;

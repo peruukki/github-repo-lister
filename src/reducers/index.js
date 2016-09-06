@@ -1,3 +1,4 @@
+// @flow weak
 const initialState = {
   isFetching: false,
   username: null,
