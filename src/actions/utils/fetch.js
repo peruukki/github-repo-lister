@@ -1,22 +1,23 @@
-// @flow weak
+// @flow
 import fetch from 'isomorphic-fetch';
 
-const checkStatus = (response) => {
+function checkStatus(response: FetchErrorResponse): FetchErrorResponse {
   if (response.status >= 200 && response.status < 300) {
     return response;
   } else {
-    var error: any = new Error(response.statusText);
+    const error: FetchError = new Error(response.statusText);
     error.response = response;
     throw error;
   }
-};
+}
 
-const failingFetch = (url) =>
-  fetch(url)
+function failingFetch(url: string): Promise<Array<APIRepository>> {
+  return fetch(url)
     .catch(error => {
       throw new Error('Network error, check your internet connection.');
     })
     .then(checkStatus)
     .then(response => response.json());
+}
 
 export default failingFetch;

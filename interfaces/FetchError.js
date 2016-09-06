@@ -1,5 +1,6 @@
 declare interface FetchErrorResponse {
-  status: number
+  status: number,
+  statusText?: string
 };
 
 declare interface FetchError {
