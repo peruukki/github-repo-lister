@@ -5,11 +5,12 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
 import App from './App';
+import { initialState } from './reducers';
 
 const mockStore = configureStore([thunk]);
 
 it('renders without crashing', () => {
-  const store = mockStore();
+  const store = mockStore(initialState);
 
   ReactDOM.render(
     <Provider store={store}>

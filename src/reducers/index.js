@@ -1,5 +1,5 @@
 // @flow
-const initialState = {
+export const initialState = {
   isFetching: false,
   username: null,
   repositories: [],
