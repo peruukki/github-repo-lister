@@ -16,27 +16,37 @@ npm start
 
 Runs the app in the development mode. Watches for changes and reloads the app in the browser. Also runs the linter.
 
-## Running Tests
+## Running Tests and Checks
 
+Running all tests and checks (linting, type checking, tests and code coverage) once:
 ```
 npm test
 ```
 
-Runs the tests once.
-
+Launching the interactive test runner:
 ```
-npm run test:watch
+npm run spec
 ```
 
-Runs the tests on file changes.
+Running just the tests once:
+```
+npm run spec:ci
+```
 
-## Running Type Checks
+Running just the tests with code coverage:
+```
+npm run spec:coverage
+```
 
+Running just the [Flow](https://flowtype.org/) type checker:
 ```
 npm run flow
 ```
 
-Runs the [Flow](https://flowtype.org/) type checks.
+Running just the [ESLint](http://eslint.org/) JavaScript linter:
+```
+npm run lint:js
+```
 
 ## Creating Production Build
 
