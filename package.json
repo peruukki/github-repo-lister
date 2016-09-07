@@ -32,8 +32,9 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
-    "test": "npm run test:unit",
+    "test": "npm run test:type-checks && npm run test:unit",
     "test:browser": "react-scripts test --env=jsdom",
+    "test:type-checks": "flow",
     "test:unit": "NODE_ENV=test mocha --recursive --compilers js:babel-register",
     "test:watch": "npm test -- --watch"
   },
