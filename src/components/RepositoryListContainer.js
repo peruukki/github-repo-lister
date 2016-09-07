@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import RepositoryList from './RepositoryList';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: State) => ({
   isFetching: state.isFetching,
   username: state.username,
   repositories: state.repositories,

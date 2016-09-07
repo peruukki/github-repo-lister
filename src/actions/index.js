@@ -23,28 +23,34 @@ function normalizeErrorMessage(username: string, error: FetchError): string {
   return error.toString();
 };
 
-export const fetchRepositoriesRequest = (username: string) => ({
-  type: 'FETCH_REPOSITORIES_REQUEST',
-  username
-});
+export function fetchRepositoriesRequest(username: string): Action {
+  return {
+    type: 'FETCH_REPOSITORIES_REQUEST',
+    username
+  };
+};
 
-export const fetchRepositoriesSuccess = (username: string, repositories: Array<APIRepository>) => ({
-  type: 'FETCH_REPOSITORIES_SUCCESS',
-  username,
-  repositories: normalizeRepositories(repositories)
-});
+export function fetchRepositoriesSuccess(username: string, repositories: Array<APIRepository>): Action {
+  return {
+    type: 'FETCH_REPOSITORIES_SUCCESS',
+    username,
+    repositories: normalizeRepositories(repositories)
+  };
+};
 
-export const fetchRepositoriesFailure = (username: string, error: FetchError) => ({
-  type: 'FETCH_REPOSITORIES_FAILURE',
-  username,
-  error: normalizeErrorMessage(username, error)
-});
+export function fetchRepositoriesFailure(username: string, error: FetchError): Action {
+  return {
+    type: 'FETCH_REPOSITORIES_FAILURE',
+    username,
+    error: normalizeErrorMessage(username, error)
+  };
+};
 
-export const fetchRepositories = (username: string) => {
-  return (dispatch: Function) => {
+export function fetchRepositories(username: string) {
+  return (dispatch: Dispatch) => {
     dispatch(fetchRepositoriesRequest(username));
     return fetch(repositoriesUrl(username))
       .then(json => dispatch(fetchRepositoriesSuccess(username, json)))
       .catch(error => dispatch(fetchRepositoriesFailure(username, error)));
   };
-};
+}

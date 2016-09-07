@@ -17,7 +17,7 @@ describe('reducers', () => {
     );
 
     it('should provide the initial state', () => {
-      expect(index(undefined, {})).toEqual(initialState);
+      expect(index(undefined, { type: 'NONE' })).toEqual(initialState);
     });
 
     it('should handle the FETCH_REPOSITORIES_REQUEST action', () => {
