@@ -56,6 +56,15 @@ npm run build
 
 Creates a production build in the `build` directory.
 
+## Deploying to GitHub Pages
+
+```
+npm run deploy
+```
+
+Creates a production build with `npm run build` and executes `deploy.sh` to
+deploy to GitHub pages.
+
 ## License
 
 [MIT](LICENSE)
