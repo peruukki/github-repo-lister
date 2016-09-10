@@ -89,7 +89,7 @@ describe('actions', () => {
     const assertAsyncFetchActions = (apiStatus, apiBody, expectedActions) => {
       // Mock GitHub API response
       nock('https://api.github.com')
-        .get(`/users/${username}/repos`)
+        .get(`/users/${username}/repos?sort=pushed`)
         .reply(apiStatus, apiBody);
 
       const store = mockStore();

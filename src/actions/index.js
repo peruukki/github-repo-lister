@@ -2,7 +2,7 @@
 import fetch from './utils/fetch';
 
 function repositoriesUrl(username: string): string {
-  return `https://api.github.com/users/${username}/repos`;
+  return `https://api.github.com/users/${username}/repos?sort=pushed`;
 }
 
 function normalizeRepositories(repositories: Array<APIRepository>): Array<Repository> {
