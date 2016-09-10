@@ -20,7 +20,7 @@ const renderRepositoryList = (repositories: Array<Repository>) => {
     repositories.map(renderRepository);
 
   return (
-    <table>
+    <table className="RepositoryList-table">
       <thead>
         <tr>
           <th className="RepositoryList-list-heading">
@@ -36,7 +36,7 @@ const renderRepositoryList = (repositories: Array<Repository>) => {
   );
 };
 
-const RepositoryList = (props: { isFetching: boolean, username: ?string, repositories: Array<Repository>, error: ?string }) => {
+const RepositoryList = (props: { isFetching: boolean, username?: ?string, repositories: Array<Repository>, error?: ?string }) => {
   const repositoryList = props.isFetching
     ? <Spinner />
     : (props.username && !props.error)
